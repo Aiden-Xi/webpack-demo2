@@ -7,6 +7,18 @@ var config = {
         path: path.resolve(__dirname, './dist'),
         filename: 'js/[name].bundle.js'
     },
+    module: {
+        loaders: [
+            {
+                test: /\.js$/,
+                loader: 'babel-loader',
+                query: {
+                    presets: ['latest']
+                },
+                include: [path.resolve(__dirname, './src')]
+            }
+        ]
+    },
     plugins: [
         new htmlWebpackPlugin({
             filename: 'index.html',
