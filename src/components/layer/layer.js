@@ -2,8 +2,8 @@
 
 function layer() {
     return {
-        name: 'layer',
-        tpl: tpl
+        name: 'layer'
+        // tpl: tpl
     };
 }
 

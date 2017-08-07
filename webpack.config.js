@@ -12,10 +12,11 @@ var config = {
             {
                 test: /\.js$/,
                 loader: 'babel-loader',
+                include: [path.resolve(__dirname, './src')],
+                exclude: [path.resolve(__dirname, './node_modules')],
                 query: {
                     presets: ['latest']
-                },
-                include: [path.resolve(__dirname, './src')]
+                }
             }
         ]
     },
