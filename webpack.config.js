@@ -2,6 +2,7 @@ const path = require('path');
 var htmlWebpackPlugin = require('html-webpack-plugin');
 
 var config = {
+    context: __dirname,
     entry: path.resolve(__dirname, './src/app.js'),
     output: {
         path: path.resolve(__dirname, './dist'),
@@ -17,9 +18,18 @@ var config = {
                 query: {
                     presets: ['latest']
                 }
+            },
+            {
+                test: /\.css$/,
+                loader: 'style-loader!css-loader?importLoaders=1!postcss-loader'
             }
         ]
     },
+    postcss: [
+        require('autoprefixer')({
+            browser: ['last 5 versions']
+        })
+    ],
     plugins: [
         new htmlWebpackPlugin({
             filename: 'index.html',
