@@ -1,0 +1,6 @@
+.idea/modules.xml
+.idea/watcherTasks.xml
+.idea/webpack-demo2.iml
+.idea/workspace.xml
+dist/
+node_modules/
